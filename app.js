@@ -13,6 +13,8 @@ const db = mysql.createConnection({
     user: 'root',
     password: '',
     database: 'nodejs-login'
+    /* JWT_SECRET: 'mysupersecretpassword',
+    JWT_EXPIRES_IN = 90d */
 });
 const publicDirectory = path.join(__dirname, './public');
 
