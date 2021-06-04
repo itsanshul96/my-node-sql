@@ -27,3 +27,6 @@ nav li a:hover{
     color: aqua;
     text-decoration: none;
 }
+.div.button {
+   margin-bottom: 20px;
+}

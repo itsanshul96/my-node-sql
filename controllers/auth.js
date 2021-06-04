@@ -39,8 +39,8 @@ exports.register = (req, res) => {
                     console.log('Second Error' + error);
                 }
                 else {
-                    return res.render('index', {
-                        message: 'Aap registerd ho gaye hai'
+                    return res.render('user_details', {
+                        message: 'User Successfully registerd..!!'
                     });
                 }
             });

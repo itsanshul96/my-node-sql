@@ -40,9 +40,13 @@ app.get("/", (req, res) => {
 app.get("/register", (req, res) => {
     res.render("register");
 });
+app.get("/login", (req, res) => {
+    res.render("login");
+});
 
 app.use('/auth', require("./routes/auth"));
 
 app.listen(5000, () => {
     console.log('My server is running on the port of 5000');
 });
+

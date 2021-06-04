@@ -1,3 +1,0 @@
-/*var validationfunction = function(){
-    if ($('#'))
-}*/
