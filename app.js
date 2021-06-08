@@ -1,5 +1,11 @@
 const express = require("express");
+
 const mysql = require("mysql");
+
+const dotenv = require("dotenv");
+
+dotenv.config({path: './.env'});
+
 const {
     dirname
 } = require("path");
@@ -9,10 +15,10 @@ const path = require("path");
 const app = express();
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'nodejs-login'
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE
     /* JWT_SECRET: 'mysupersecretpassword',
     JWT_EXPIRES_IN = 90d */
 });

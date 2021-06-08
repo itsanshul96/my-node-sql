@@ -5,12 +5,13 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'nodejs-login'
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE
+    /* JWT_SECRET: 'mysupersecretpassword',
+    JWT_EXPIRES_IN = 90d */
 });
-
 exports.login = async (req, res) => {
     try {
         const {
@@ -28,12 +29,12 @@ exports.login = async (req, res) => {
                 res.status(401).render('login', {
                     message: 'The email or the password is incorrect'
                 });
-            } /* /* else {
+            } else {
                 const id = results[0].id;
                 const token = jwt.sign({
                     id: id
-                }, process.env.JWT_SECRET) 
-            } */
+                }, process.env.JWT_SECRET)
+            }
         });
     } catch (error) {
         console.log(error);
